@@ -8,7 +8,7 @@ public class Client {
     private final JFrame frame;
     private final JTextField urlField;
     private final JTextArea contentArea;
-    private final JTextField postDataField;
+    private final JTextArea postDataField;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(Client::new);
@@ -18,7 +18,7 @@ public class Client {
         frame = new JFrame("Simple HTTP Client");
         urlField = new JTextField(30);
         contentArea = new JTextArea(20, 40);
-        postDataField = new JTextField(30);
+        postDataField = new JTextArea(1, 30);
         contentArea.setEditable(false);
 
         JButton fetchButton = new JButton("Fetch");
