@@ -91,10 +91,12 @@ public class Client {
             connection.setRequestMethod("GET");
 
             int responseCode = connection.getResponseCode();
+            System.out.println("Response code:" + responseCode);
             if (responseCode == 200) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String inputLine;
                 StringBuilder content = new StringBuilder();
+                // content.append("Response Code:").append(responseCode).append("\n");
                 while ((inputLine = in.readLine()) != null) {
                     content.append(inputLine).append("\n");
                 }
@@ -127,6 +129,7 @@ public class Client {
             os.close();
 
             int responseCode = connection.getResponseCode();
+            System.out.println("Response code:" + responseCode);
             if (responseCode == 201) {
                 contentArea.setText("Data posted successfully.");
             } else {
